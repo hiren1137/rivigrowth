@@ -1,0 +1,24 @@
+---
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Rivigrowth',
+  url: 'https://rivigrowth.com',
+  logo: 'https://rivigrowth.com/favicon.svg',
+  description:
+    'Founder-led SEO agency for local businesses and SaaS companies.',
+  numberOfEmployees: '2',
+  sameAs: [
+    'https://twitter.com/rivigrowth',
+    'https://www.linkedin.com/company/rivigrowth',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'hello@rivigrowth.com',
+    availableLanguage: ['English'],
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

@@ -1,0 +1,61 @@
+---
+interface Props {
+  name: string;
+  price: string;
+  cadence?: string;
+  features: string[];
+  highlighted?: boolean;
+  tag?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const {
+  name,
+  price,
+  cadence = '/mo',
+  features,
+  highlighted = false,
+  tag,
+  ctaHref = '/contact',
+  ctaLabel = 'Get started',
+} = Astro.props;
+---
+
+<article
+  class="flex flex-col p-8 md:p-10 h-full relative"
+  style={`background: ${highlighted ? '#FFFEFA' : 'transparent'}; border: 1px solid var(--border); ${highlighted ? 'border-color: var(--accent);' : ''}`}
+>
+  {tag && (
+    <span
+      class="absolute -top-3 left-8 text-[12px] tracking-wider uppercase px-2 py-1"
+      style="background: var(--accent); color: var(--bg); border-radius: 2px;"
+    >
+      {tag}
+    </span>
+  )}
+
+  <header>
+    <p class="section-label">{name.toLowerCase()}</p>
+    <p class="font-display mt-3" style="font-size: 56px; line-height: 1;">
+      {price}
+      <span class="text-[16px]" style="color: var(--text-muted); font-family: 'Geist', sans-serif;">{cadence}</span>
+    </p>
+  </header>
+
+  <ul class="mt-8 space-y-3 flex-1">
+    {features.map((f) => (
+      <li class="flex gap-3 text-[15px]" style="color: var(--text);">
+        <span aria-hidden="true" style="color: var(--accent); margin-top: 2px;">→</span>
+        <span>{f}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href={ctaHref}
+    class="mt-10 inline-flex items-center justify-between gap-3 text-[15px] font-medium link-underline"
+  >
+    {ctaLabel} <span aria-hidden="true">→</span>
+  </a>
+</article>

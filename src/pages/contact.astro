@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Book a Free SEO Strategy Call — Rivigrowth';
+const description =
+  'Book a free 30-minute SEO strategy call. We respond within 24 hours.';
+const canonical = 'https://rivigrowth.com/contact';
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  {/* HERO */}
+  <section class="container-content pt-16 md:pt-24 pb-12">
+    <div class="max-w-4xl reveal">
+      <p class="eyebrow eyebrow-accent mb-5">Contact · book a call</p>
+      <h1 class="h-hero">
+        Book a free <span class="italic-accent" style="color: var(--accent);">30-minute</span> strategy call.
+      </h1>
+      <p class="lead mt-7 max-w-2xl">
+        We pull up your site, your competitors, and your search visibility — and we tell you what we’d fix first. No deck, no pitch.
+      </p>
+    </div>
+  </section>
+
+  {/* BOOKING + DETAILS */}
+  <section class="container-content pb-24 md:pb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      {/* LEFT — Cal.com embed */}
+      <div class="lg:col-span-7">
+        <p class="eyebrow eyebrow-accent mb-5">Pick a time</p>
+        <div style="border: 1px solid var(--border); border-radius: 8px; background: #FFFEFA; overflow: hidden;">
+          <iframe
+            src="https://cal.com/hiren-thakkar/30min?embed=true&theme=light"
+            title="Book a free 30-minute SEO strategy call with Rivigrowth"
+            loading="lazy"
+            style="width: 100%; height: 760px; border: 0; display: block;"
+          ></iframe>
+        </div>
+        <div class="mt-5 flex flex-wrap items-center gap-4">
+          <a href="https://cal.com/hiren-thakkar/30min" target="_blank" rel="noopener" class="btn-dark">
+            Open booking page <span aria-hidden="true">→</span>
+          </a>
+          <p class="text-[13px]" style="color: var(--text-muted);">If the embed above isn’t loading.</p>
+        </div>
+      </div>
+
+      {/* RIGHT — what to expect */}
+      <aside class="lg:col-span-5 space-y-8">
+        <div class="card p-8" style="background: var(--bg-cream);">
+          <p class="eyebrow eyebrow-accent">What to expect</p>
+          <h2 class="h-sub mt-3">A 30-minute call. No slides.</h2>
+          <ul class="mt-6 space-y-3 text-[15px]" style="color: var(--text-muted);">
+            <li class="flex gap-3"><span style="color: var(--accent);" aria-hidden="true">→</span><span>Both founders on the call.</span></li>
+            <li class="flex gap-3"><span style="color: var(--accent);" aria-hidden="true">→</span><span>A walkthrough of your site against your top 2 competitors.</span></li>
+            <li class="flex gap-3"><span style="color: var(--accent);" aria-hidden="true">→</span><span>The 3 things we’d do in your first 90 days.</span></li>
+            <li class="flex gap-3"><span style="color: var(--accent);" aria-hidden="true">→</span><span>Honest answer on whether we’re a fit.</span></li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <p class="eyebrow eyebrow-accent">Email</p>
+          <p class="mt-3">
+            <a href="mailto:hello@rivigrowth.com" class="link-underline text-[20px] font-semibold">
+              hello@rivigrowth.com
+            </a>
+          </p>
+          <p class="mt-2 text-[14px]" style="color: var(--text-muted);">
+            We respond within 24 hours.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {/* SECONDARY LINKS */}
+  <section class="section-cream">
+    <div class="container-content py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/local-business" class="card card-hover p-8">
+          <p class="eyebrow eyebrow-accent">For local businesses</p>
+          <p class="h-sub mt-3" style="font-size: 24px;">Local SEO →</p>
+        </a>
+        <a href="/saas" class="card card-hover p-8">
+          <p class="eyebrow eyebrow-accent">For SaaS founders</p>
+          <p class="h-sub mt-3" style="font-size: 24px;">SaaS SEO →</p>
+        </a>
+        <a href="/pricing" class="card card-hover p-8">
+          <p class="eyebrow eyebrow-accent">Plans & pricing</p>
+          <p class="h-sub mt-3" style="font-size: 24px;">From $2,000/mo →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

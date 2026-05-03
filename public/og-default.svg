@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#FAFAF7"/>
+  <text
+    x="80"
+    y="280"
+    font-family="Georgia, 'Instrument Serif', serif"
+    font-size="120"
+    fill="#0F0F0F"
+  >rivigrowth<tspan fill="#D4633A">.</tspan></text>
+  <text
+    x="80"
+    y="380"
+    font-family="Georgia, 'Instrument Serif', serif"
+    font-size="56"
+    font-style="italic"
+    fill="#6B6B6B"
+  >SEO that ranks for the keywords</text>
+  <text
+    x="80"
+    y="450"
+    font-family="Georgia, 'Instrument Serif', serif"
+    font-size="56"
+    font-style="italic"
+    fill="#6B6B6B"
+  >that print money.</text>
+  <text
+    x="80"
+    y="560"
+    font-family="Helvetica, Arial, sans-serif"
+    font-size="24"
+    letter-spacing="2"
+    fill="#6B6B6B"
+  >FOUNDER-LED · LOCAL BUSINESS · SAAS</text>
+  <line x1="80" y1="80" x2="1120" y2="80" stroke="#E8E6E0" stroke-width="1"/>
+  <line x1="80" y1="550" x2="1120" y2="550" stroke="#E8E6E0" stroke-width="1"/>
+</svg>

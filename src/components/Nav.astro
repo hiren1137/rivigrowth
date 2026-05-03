@@ -1,0 +1,39 @@
+---
+import Logo from './Logo.astro';
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/local-business', label: 'Local business' },
+  { href: '/saas', label: 'SaaS' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header class="sticky top-0 z-40 backdrop-blur" style="background: color-mix(in srgb, var(--bg) 90%, transparent);">
+  <div class="container-nav flex items-center justify-between py-4" style="border-bottom: 1px solid var(--border);">
+    <a href="/" class="flex items-center" aria-label="Rivigrowth — home">
+      <Logo height={28} />
+    </a>
+
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="link-quiet text-[14px] font-medium"
+          aria-current={pathname === l.href ? 'page' : undefined}
+          style={pathname === l.href ? 'color: var(--text);' : ''}
+        >
+          {l.label}
+        </a>
+      ))}
+      <a href="/contact" class="text-[14px] inline-flex items-center gap-2 px-5 py-2.5 rounded font-semibold" style="background: var(--accent); color: var(--bg);">
+        Book a call
+        <span aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+    <a href="/contact" class="md:hidden text-[14px] inline-flex items-center gap-2 px-4 py-2 rounded font-semibold" style="background: var(--accent); color: var(--bg);">
+      Book →
+    </a>
+  </div>
+</header>

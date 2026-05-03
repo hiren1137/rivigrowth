@@ -1,0 +1,21 @@
+{
+  "name": "Rivigrowth",
+  "short_name": "Rivigrowth",
+  "description": "Founder-led SEO agency for local businesses and SaaS companies.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FAFAF7",
+  "background_color": "#FAFAF7",
+  "display": "standalone",
+  "start_url": "/"
+}

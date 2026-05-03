@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Testimonials from '../components/Testimonials.astro';
+import GSCChart from '../components/GSCChart.astro';
+import SchemaService from '../components/SchemaService.astro';
+
+const title = 'SaaS SEO Agency — Content & Keyword Research | Rivigrowth';
+const description =
+  'SEO content and keyword research for SaaS founders. We rank you for the queries your buyers actually search. Founder-led, no junior handoffs.';
+const canonical = 'https://rivigrowth.com/saas';
+
+const stack = [
+  {
+    n: '01',
+    t: 'Keyword research that maps to revenue',
+    b: 'We score every keyword by intent, volume, ranking difficulty, and how close it is to a paying customer. No guessing, no AI-spam keyword lists.',
+  },
+  {
+    n: '02',
+    t: 'Content briefed around buyer intent',
+    b: 'Long-form content built around what your buyers actually search — written by people who’ve sold software, optimized for Google and the way real prospects research.',
+  },
+  {
+    n: '03',
+    t: 'On-page SEO done properly',
+    b: 'Title tags, meta, internal linking, schema, content hierarchy. The boring work that moves a #14 ranking to #4.',
+  },
+  {
+    n: '04',
+    t: 'Programmatic landing pages',
+    b: 'Use-case pages, integration pages, comparison pages, "[X] for [persona]" pages. Built at scale to capture long-tail commercial intent.',
+  },
+  {
+    n: '05',
+    t: 'Internal linking architecture',
+    b: 'Topic clusters that pass authority to the pages that convert. Most SaaS blogs leak ranking power — we plug the leaks.',
+  },
+  {
+    n: '06',
+    t: 'Backlinks from real SaaS sites',
+    b: 'Targeted outreach, partnership-driven, digital PR. No PBNs, no spam, nothing that risks a manual penalty.',
+  },
+];
+
+const articleSamples = [
+  { type: 'Use-case', title: 'How to use [tool] for asynchronous standups', tag: 'High intent · MoFu' },
+  { type: 'Comparison', title: '[Competitor] vs [Competitor]: which one ships faster?', tag: 'BoFu · ranks fast' },
+  { type: 'Programmatic', title: 'Best [category] software for [industry] teams', tag: '40+ variants' },
+  { type: 'Integration', title: 'Connect [tool] with [SaaS]: complete guide', tag: 'BoFu · evergreen' },
+];
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <SchemaService
+    slot="head"
+    name="SaaS SEO Services"
+    description="SEO content and keyword research for SaaS founders. We rank software companies for the queries their buyers actually search."
+    serviceType="SaaS Search Engine Optimization"
+    url={canonical}
+    areaServed="Worldwide"
+  />
+
+  {/* HERO — split with article-card preview on the right */}
+  <section class="container-content pt-16 md:pt-24 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 reveal">
+        <p class="eyebrow eyebrow-accent mb-5">SaaS SEO · content + keyword research</p>
+        <h1 class="h-hero">
+          SEO content for SaaS founders who care about <span class="italic-accent" style="color: var(--accent);">organic traffic</span>.
+        </h1>
+        <p class="lead mt-7 max-w-xl">
+          We do the keyword research, write the content, optimize the pages, and build the links — so your blog stops being a graveyard and starts pulling in qualified search traffic.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="/contact" class="btn-primary">Book a free strategy call <span aria-hidden="true">→</span></a>
+          <a href="/pricing" class="btn-outline">See pricing</a>
+        </div>
+        <ul class="mt-9 grid grid-cols-2 gap-x-6 gap-y-2 text-[14px]" style="color: var(--text-muted);">
+          <li class="flex items-baseline gap-2"><span style="color: var(--accent);">●</span> Keyword research</li>
+          <li class="flex items-baseline gap-2"><span style="color: var(--accent);">●</span> Long-form content</li>
+          <li class="flex items-baseline gap-2"><span style="color: var(--accent);">●</span> Programmatic pages</li>
+          <li class="flex items-baseline gap-2"><span style="color: var(--accent);">●</span> Internal linking</li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-5 reveal" style="--reveal-delay: 150ms;">
+        {/* Mock article-result card — fakes a Google search result + traffic */}
+        <div class="card p-6" style="background: var(--bg-cream);">
+          <p class="eyebrow eyebrow-accent mb-3">Page 1 result · #2</p>
+          <p class="text-[12px]" style="color: var(--text-muted);">yourapp.com › guides › [keyword]</p>
+          <p class="mt-1 text-[18px] font-semibold leading-snug" style="color: #1a0dab;">
+            How [tool] beats [competitor] for engineering teams
+          </p>
+          <p class="mt-1 text-[13px]" style="color: var(--text-muted); line-height: 1.4;">
+            See the side-by-side comparison of features, pricing, and real workflows from teams that switched. Updated for Q1.
+          </p>
+
+          <hr class="hairline my-5" />
+
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <p class="eyebrow eyebrow-accent" style="font-size: 10px;">Clicks/mo</p>
+              <p class="mt-1 font-bold text-[20px]">4.2K</p>
+            </div>
+            <div>
+              <p class="eyebrow eyebrow-accent" style="font-size: 10px;">CTR</p>
+              <p class="mt-1 font-bold text-[20px]">18%</p>
+            </div>
+            <div>
+              <p class="eyebrow eyebrow-accent" style="font-size: 10px;">Position</p>
+              <p class="mt-1 font-bold text-[20px]" style="color: var(--accent);">2.1</p>
+            </div>
+          </div>
+
+          <p class="mt-5 text-[12px]" style="color: var(--text-muted);">
+            Real shape of a SaaS comparison page on page 1. Numbers are illustrative.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* PAIN — different layout: 3-card horizontal strip */}
+  <section class="section-dark">
+    <div class="container-content py-20 md:py-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow eyebrow-accent mb-4">If this sounds familiar</p>
+        <h2 class="h-section" style="color: var(--text-dark-bg);">
+          Your blog is a graveyard. <span class="italic-accent" style="color: var(--accent);">Let’s fix that.</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        {[
+          { t: 'You publish, but nothing ranks', b: 'Articles ship. Traffic doesn’t. There’s no keyword strategy under the editorial calendar — just topics someone thought sounded good.' },
+          { t: 'Traffic comes, but nobody signs up', b: 'You rank for "what is [thing]" and similar curious-reader queries. Buyers don’t search those. Your trial page never sees the visitors.' },
+          { t: 'Writers don’t understand your product', b: 'You spend more time editing than the writers spent writing. Every comparison post needs three rounds because they didn’t use the product.' },
+        ].map((p) => (
+          <article class="card-dark p-7 h-full">
+            <h3 class="font-semibold text-[18px]" style="color: var(--text-dark-bg);">{p.t}</h3>
+            <p class="mt-3 text-[14px]" style="color: var(--text-dark-bg-muted);">{p.b}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* THE STACK — 6 services in a 3x2 grid (very different from homepage 4-step) */}
+  <section class="container-content py-24 md:py-32">
+    <div class="max-w-3xl">
+      <p class="eyebrow eyebrow-accent mb-4">Our SaaS SEO stack</p>
+      <h2 class="h-section">Six pieces. <span class="italic-accent" style="color: var(--accent);">Every plan, every month.</span></h2>
+      <p class="lead mt-5">
+        Not a 4-step process. A repeatable stack we run end-to-end so your traffic compounds.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+      {stack.map((s) => (
+        <article class="card p-7 h-full">
+          <p class="eyebrow eyebrow-accent">{s.n}</p>
+          <h3 class="h-sub mt-3" style="font-size: 22px;">{s.t}</h3>
+          <p class="mt-3 text-[14px]" style="color: var(--text-muted);">{s.b}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {/* CONTENT WE WRITE — sample previews */}
+  <section class="section-cream">
+    <div class="container-content py-24 md:py-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <p class="eyebrow eyebrow-accent mb-4">Content we write</p>
+          <h2 class="h-section">Long-form. <span class="italic-accent" style="color: var(--accent);">Built around buyer intent.</span></h2>
+          <p class="lead mt-5">
+            Use-case posts, comparison pages, integration guides, and programmatic templates — the formats that actually rank in SaaS SERPs.
+          </p>
+          <a href="/contact" class="btn-dark mt-8">Talk to us about your content <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {articleSamples.map((a) => (
+            <article class="card p-6 h-full" style="background: var(--bg);">
+              <p class="eyebrow eyebrow-accent" style="font-size: 11px;">{a.type}</p>
+              <p class="mt-3 font-semibold text-[16px] leading-snug">{a.title}</p>
+              <p class="mt-4 text-[12px]" style="color: var(--text-muted);">{a.tag}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* KEYWORD RESEARCH DEEP DIVE — distinct section */}
+  <section class="container-content py-24 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <p class="eyebrow eyebrow-accent mb-4">Keyword research</p>
+        <h2 class="h-section">Every keyword, <span class="italic-accent" style="color: var(--accent);">scored.</span></h2>
+        <p class="lead mt-5">
+          We don’t hand you a 500-row spreadsheet and walk away. Every keyword gets four scores so you know exactly what to write next — and what to skip.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 card p-8 md:p-10">
+        <table class="w-full text-left">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <th class="py-4 pr-4 eyebrow eyebrow-accent" style="font-size: 11px;">Score</th>
+              <th class="py-4 pr-4 eyebrow eyebrow-accent" style="font-size: 11px;">What it tells you</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Intent', 'Is this person ready to buy, or just curious?'],
+              ['Volume', 'How much traffic does the keyword actually get?'],
+              ['Difficulty', 'How hard is it to rank against current page-1 results?'],
+              ['Revenue fit', 'How close is this keyword to your product’s actual buyers?'],
+            ].map(([k, v]) => (
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td class="py-4 pr-4 font-semibold text-[15px]">{k}</td>
+                <td class="py-4 pr-4 text-[15px]" style="color: var(--text-muted);">{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="mt-6 text-[13px]" style="color: var(--text-muted);">
+          Output: a prioritized backlog you and your team can actually use.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* RESULTS */}
+  <section class="section-cream">
+    <div class="container-content py-24 md:py-32">
+      <div class="max-w-3xl">
+        <p class="eyebrow eyebrow-accent mb-4">Results · real GSC data</p>
+        <h2 class="h-section">From 62K to 96K organic clicks in <span class="italic-accent" style="color: var(--accent);">90 days.</span></h2>
+        <p class="lead mt-5">
+          What focused content + keyword research looks like in Search Console — clicks +54%, impressions +45%, average position pulled to 7.4.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 mt-12" style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        {[
+          { v: '96.2K', l: 'organic clicks · +54%' },
+          { v: '6.82M', l: 'impressions · +45%' },
+          { v: '7.4', l: 'avg position, from 8.0' },
+        ].map((s, i) => (
+          <div class="py-10 px-2 md:px-8" style={i < 2 ? 'border-right: 1px solid var(--border);' : ''}>
+            <p class="h-stat">{s.v}</p>
+            <p class="mt-3 text-[14px]" style="color: var(--text-muted);">{s.l}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12">
+        <GSCChart />
+      </div>
+    </div>
+  </section>
+
+  {/* TESTIMONIAL */}
+  <Testimonials
+    label="What SaaS clients say"
+    heading="Rankings. Traffic. Visibility."
+    testimonials={[{
+      quote: 'Drop a real SaaS-founder testimonial here — focused on rankings, organic traffic growth, or visibility for revenue keywords.',
+      name: 'Client name',
+      role: 'Founder · SaaS company',
+      result: '+54%',
+    }]}
+  />
+
+  {/* FINAL CTA */}
+  <section class="section-dark">
+    <div class="container-content py-24 md:py-32">
+      <div class="max-w-4xl">
+        <p class="eyebrow eyebrow-accent mb-5">Ready to grow?</p>
+        <h2 class="h-section" style="color: var(--text-dark-bg);">
+          Let’s plan the content <span class="italic-accent" style="color: var(--accent);">that grows your organic traffic.</span>
+        </h2>
+        <p class="lead mt-6" style="color: var(--text-dark-bg-muted);">
+          Free 30-minute strategy call. We pull up your site, your keywords, and your competitors — and we map out what to publish over the next 90 days.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="/contact" class="btn-primary">Book a free strategy call <span aria-hidden="true">→</span></a>
+          <a href="/local-business" class="btn-on-dark">See local SEO</a>
+          <a href="/pricing" class="btn-on-dark">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

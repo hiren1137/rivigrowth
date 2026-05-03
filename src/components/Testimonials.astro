@@ -1,0 +1,78 @@
+---
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  result?: string;
+  avatar?: string;
+}
+
+interface Props {
+  label?: string;
+  heading?: string;
+  testimonials?: Testimonial[];
+}
+
+const {
+  label = 'What clients say',
+  heading = 'Real founders. Real numbers.',
+  testimonials = [
+    {
+      quote: 'Add your testimonial here. The card is built — swap this string for a real quote and replace the avatar later.',
+      name: 'Client name',
+      role: 'Role · Company',
+      result: 'Result',
+    },
+  ],
+} = Astro.props;
+---
+
+<section class="container-content py-24 md:py-32">
+  <div class="max-w-3xl">
+    <p class="eyebrow eyebrow-accent mb-4">{label}</p>
+    <h2 class="h-section">{heading}</h2>
+  </div>
+
+  <div class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+    {testimonials.slice(0, 1).map((t) => (
+      <article class="lg:col-span-8 p-10 md:p-14 flex flex-col" style="border: 1px solid var(--border); background: var(--bg-cream); border-radius: 8px;">
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 80px; line-height: 0.6; color: var(--accent);" aria-hidden="true">"</span>
+        <blockquote style="font-family: 'Geist', sans-serif; font-weight: 500; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; letter-spacing: -0.015em; color: var(--text); margin-top: 16px;">
+          {t.quote}
+        </blockquote>
+
+        <footer class="mt-auto pt-10 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-[18px]" style="background: var(--accent); color: var(--bg);" aria-hidden="true">
+            {t.name.charAt(0)}
+          </div>
+          <div class="flex-1">
+            <p class="text-[15px] font-semibold" style="color: var(--text);">{t.name}</p>
+            <p class="text-[13px]" style="color: var(--text-muted);">{t.role}</p>
+          </div>
+          {t.result && (
+            <div class="text-right">
+              <p style="font-family: 'Geist', sans-serif; font-weight: 700; font-size: 36px; line-height: 1; letter-spacing: -0.02em;">{t.result}</p>
+            </div>
+          )}
+        </footer>
+      </article>
+    ))}
+
+    <aside class="lg:col-span-4 grid grid-cols-1 gap-6">
+      <div class="card p-8 flex-1">
+        <p class="eyebrow eyebrow-accent">Retention</p>
+        <p class="mt-3" style="font-family: 'Geist', sans-serif; font-weight: 700; font-size: 56px; line-height: 1;">94%</p>
+        <p class="mt-2 text-[14px]" style="color: var(--text-muted);">
+          of clients renew past the 3-month minimum
+        </p>
+      </div>
+      <div class="card p-8 flex-1">
+        <p class="eyebrow eyebrow-accent">Avg. project</p>
+        <p class="mt-3" style="font-family: 'Geist', sans-serif; font-weight: 700; font-size: 56px; line-height: 1;">14<span class="text-[24px] font-medium" style="color: var(--text-muted);"> mo</span></p>
+        <p class="mt-2 text-[14px]" style="color: var(--text-muted);">
+          how long the average client stays
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>

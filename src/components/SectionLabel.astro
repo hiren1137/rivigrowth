@@ -1,0 +1,9 @@
+---
+interface Props {
+  text: string;
+  class?: string;
+}
+const { text, class: className = '' } = Astro.props;
+---
+
+<div class={`section-label ${className}`}>{text}</div>

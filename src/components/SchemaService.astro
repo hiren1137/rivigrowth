@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  serviceType: string;
+  url: string;
+  areaServed?: string;
+}
+
+const { name, description, serviceType, url, areaServed = 'United States' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  description,
+  serviceType,
+  url,
+  provider: {
+    '@type': 'Organization',
+    name: 'Rivigrowth',
+    url: 'https://rivigrowth.com',
+  },
+  areaServed,
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'USD',
+    lowPrice: '2000',
+    highPrice: '7000',
+    offerCount: '3',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,56 @@
+---
+import Logo from './Logo.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="section-dark mt-0">
+  <div class="container-content py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <a href="/" class="flex items-center" aria-label="Rivigrowth — home">
+          <Logo variant="dark" height={36} />
+        </a>
+        <p class="mt-5 text-[15px]" style="color: var(--text-dark-bg-muted); max-width: 38ch;">
+          Founder-led SEO for local businesses and SaaS founders. Two people, one playbook, real deliverables.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">
+          Book a free strategy call <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <nav class="md:col-span-3" aria-label="Site">
+        <p class="eyebrow mb-5" style="color: var(--text-dark-bg-muted);">Site</p>
+        <ul class="space-y-3 text-[15px]">
+          <li><a href="/" class="link-quiet" style="color: var(--text-dark-bg-muted);">Home</a></li>
+          <li><a href="/local-business" class="link-quiet" style="color: var(--text-dark-bg-muted);">Local business</a></li>
+          <li><a href="/saas" class="link-quiet" style="color: var(--text-dark-bg-muted);">SaaS</a></li>
+          <li><a href="/pricing" class="link-quiet" style="color: var(--text-dark-bg-muted);">Pricing</a></li>
+          <li><a href="/about" class="link-quiet" style="color: var(--text-dark-bg-muted);">About</a></li>
+          <li><a href="/contact" class="link-quiet" style="color: var(--text-dark-bg-muted);">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-4">
+        <p class="eyebrow mb-5" style="color: var(--text-dark-bg-muted);">Contact</p>
+        <ul class="space-y-3 text-[15px]">
+          <li>
+            <a href="mailto:hello@rivigrowth.com" class="link-quiet" style="color: var(--text-dark-bg);">hello@rivigrowth.com</a>
+          </li>
+          <li>
+            <a href="/contact" class="link-quiet" style="color: var(--text-dark-bg-muted);">Contact page →</a>
+          </li>
+        </ul>
+        <p class="mt-6 text-[13px]" style="color: var(--text-dark-bg-muted);">
+          We respond within 24 hours.
+        </p>
+      </div>
+    </div>
+
+    <hr class="hairline-dark my-12" />
+
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[13px]" style="color: var(--text-dark-bg-muted);">
+      <p>© {year} Rivigrowth. All rights reserved.</p>
+      <p>Built by the people who do the work.</p>
+    </div>
+  </div>
+</footer>

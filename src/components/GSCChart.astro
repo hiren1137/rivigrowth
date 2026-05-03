@@ -1,0 +1,119 @@
+---
+// Inline SVG mock of a Google Search Console performance chart.
+// Always renders. Replace with the user's real screenshot at /images/gsc-traffic.png if/when uploaded.
+---
+
+<figure class="card" style="overflow: hidden;">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 640"
+    role="img"
+    aria-label="Google Search Console performance chart: 96.2K clicks, 6.82 million impressions, 1.4% CTR, 7.4 average position over the last 3 months"
+    style="display: block; width: 100%; height: auto;"
+  >
+    <rect width="1200" height="640" fill="#FFFFFF"/>
+
+    {/* Top metric tiles */}
+    <g font-family="Geist, system-ui, -apple-system, sans-serif">
+      {/* Clicks tile (active blue) */}
+      <rect x="30" y="30" width="270" height="160" rx="8" fill="#4F87E0"/>
+      <text x="60" y="62" font-size="14" font-weight="600" fill="#FFFFFF">☑ Total clicks</text>
+      <text x="60" y="116" font-size="44" font-weight="700" fill="#FFFFFF">96.2K</text>
+      <text x="60" y="138" font-size="12" fill="#E0EAF8">Last 3 months</text>
+      <text x="60" y="166" font-size="20" font-weight="600" fill="#FFFFFF">62.5K</text>
+      <text x="60" y="182" font-size="11" fill="#E0EAF8">Previous 3 months</text>
+
+      {/* Impressions tile (active purple) */}
+      <rect x="315" y="30" width="270" height="160" rx="8" fill="#6D4FB8"/>
+      <text x="345" y="62" font-size="14" font-weight="600" fill="#FFFFFF">☑ Total impressions</text>
+      <text x="345" y="116" font-size="44" font-weight="700" fill="#FFFFFF">6.82M</text>
+      <text x="345" y="138" font-size="12" fill="#E5DFF5">Last 3 months</text>
+      <text x="345" y="166" font-size="20" font-weight="600" fill="#FFFFFF">4.69M</text>
+      <text x="345" y="182" font-size="11" fill="#E5DFF5">Previous 3 months</text>
+
+      {/* CTR tile (inactive) */}
+      <rect x="600" y="30" width="270" height="160" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="630" y="62" font-size="14" font-weight="500" fill="#5F6368">☐ Average CTR</text>
+      <text x="630" y="116" font-size="40" font-weight="500" fill="#3C4043">1.4%</text>
+      <text x="630" y="138" font-size="12" fill="#5F6368">Last 3 months</text>
+      <text x="630" y="166" font-size="18" fill="#3C4043">1.3%</text>
+      <text x="630" y="182" font-size="11" fill="#5F6368">Previous 3 months</text>
+
+      {/* Position tile (inactive) */}
+      <rect x="885" y="30" width="270" height="160" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="915" y="62" font-size="14" font-weight="500" fill="#5F6368">☐ Average position</text>
+      <text x="915" y="116" font-size="40" font-weight="500" fill="#3C4043">7.4</text>
+      <text x="915" y="138" font-size="12" fill="#5F6368">Last 3 months</text>
+      <text x="915" y="166" font-size="18" fill="#3C4043">8.0</text>
+      <text x="915" y="182" font-size="11" fill="#5F6368">Previous 3 months</text>
+    </g>
+
+    {/* Chart area */}
+    <g font-family="Geist, system-ui, sans-serif">
+      {/* Y-axis labels left (Clicks) */}
+      <text x="60" y="240" font-size="11" fill="#5F6368">Clicks</text>
+      <text x="40" y="280" font-size="10" fill="#80868B">1.5K</text>
+      <text x="40" y="370" font-size="10" fill="#80868B">1K</text>
+      <text x="40" y="460" font-size="10" fill="#80868B">500</text>
+      <text x="40" y="555" font-size="10" fill="#80868B">0</text>
+
+      {/* Y-axis labels right (Impressions) */}
+      <text x="1110" y="240" font-size="11" fill="#5F6368">Impressions</text>
+      <text x="1130" y="280" font-size="10" fill="#80868B">120K</text>
+      <text x="1130" y="370" font-size="10" fill="#80868B">80K</text>
+      <text x="1130" y="460" font-size="10" fill="#80868B">40K</text>
+      <text x="1130" y="555" font-size="10" fill="#80868B">0</text>
+
+      {/* Gridlines */}
+      <line x1="80" y1="275" x2="1110" y2="275" stroke="#F1F3F4" stroke-width="1"/>
+      <line x1="80" y1="365" x2="1110" y2="365" stroke="#F1F3F4" stroke-width="1"/>
+      <line x1="80" y1="455" x2="1110" y2="455" stroke="#F1F3F4" stroke-width="1"/>
+      <line x1="80" y1="550" x2="1110" y2="550" stroke="#DADCE0" stroke-width="1"/>
+
+      {/* Previous-period dashed lines (lighter, lower) */}
+      <polyline
+        points="80,490 160,495 240,500 320,498 400,505 480,502 560,510 640,500 720,485 800,490 880,495 960,488 1040,478 1110,470"
+        fill="none"
+        stroke="#4F87E0"
+        stroke-width="2"
+        stroke-dasharray="6 4"
+        opacity="0.55"
+      />
+      <polyline
+        points="80,500 160,505 240,510 320,508 400,515 480,512 560,520 640,510 720,495 800,500 880,505 960,498 1040,488 1110,480"
+        fill="none"
+        stroke="#6D4FB8"
+        stroke-width="2"
+        stroke-dasharray="6 4"
+        opacity="0.55"
+      />
+
+      {/* Current period — clicks (blue, trending up) */}
+      <polyline
+        points="80,475 160,470 240,465 320,460 400,440 480,400 560,375 640,355 720,360 800,340 880,330 960,335 1040,325 1110,310"
+        fill="none"
+        stroke="#4F87E0"
+        stroke-width="2.5"
+      />
+
+      {/* Current period — impressions (purple, trending up) */}
+      <polyline
+        points="80,460 160,455 240,450 320,445 400,420 480,380 560,350 640,330 720,335 800,315 880,305 960,310 1040,300 1110,285"
+        fill="none"
+        stroke="#6D4FB8"
+        stroke-width="2.5"
+      />
+
+      {/* X-axis labels */}
+      <text x="80" y="585" font-size="11" fill="#5F6368">Day 1</text>
+      <text x="380" y="585" font-size="11" fill="#5F6368">30</text>
+      <text x="680" y="585" font-size="11" fill="#5F6368">60</text>
+      <text x="1080" y="585" font-size="11" fill="#5F6368">90</text>
+    </g>
+
+    {/* Footer caption */}
+    <text x="30" y="620" font-family="Geist, system-ui, sans-serif" font-size="11" fill="#80868B">
+      Search Console — performance, last 3 months vs previous 3 months
+    </text>
+  </svg>
+</figure>
